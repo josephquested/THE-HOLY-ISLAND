@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7b2a7565df00f4b4a940a12b8eb32945
-timeCreated: 1496981697
+timeCreated: 1496994725
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,10 @@ TextureImporter:
     21300010: player-Sheet_5
     21300012: player-Sheet_6
     21300014: player-Sheet_7
+    21300016: player-Sheet_8
+    21300018: player-Sheet_9
+    21300020: player-Sheet_10
+    21300022: player-Sheet_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -173,6 +177,58 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 176
         y: 0
         width: 16
         height: 16

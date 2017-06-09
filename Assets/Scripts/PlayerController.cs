@@ -25,11 +25,13 @@ public class PlayerController : MonoBehaviour {
 	float speed;
 	public float baseSpeed;
 	public float strafeSpeedModifier;
+	public float attackSpeedModifier;
 
 	void UpdateSpeed ()
 	{
 		float speedModifier = 0;
 		if (strafing) speedModifier += strafeSpeedModifier;
+		if (attacking) speedModifier += attackSpeedModifier;
 		speed = baseSpeed + speedModifier;
 	}
 
@@ -75,6 +77,24 @@ public class PlayerController : MonoBehaviour {
 	void Move (Vector2 force)
 	{
 		rb.AddForce(force * speed, ForceMode2D.Impulse);
+	}
+
+	// ATTACK //
+
+	bool attacking;
+
+	public void ReceiveAttack (bool attackDown, bool attackUp)
+	{
+		if (!attacking && attackDown)
+		{
+			attacking = true;
+			anim.SetBool("Attacking", true);
+		}
+		if (attacking && attackUp)
+		{
+			attacking = false;
+			anim.SetBool("Attacking", false);
+		}
 	}
 
 	// STRAFE //

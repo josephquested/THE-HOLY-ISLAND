@@ -21,6 +21,7 @@ public class PlayerInput : MonoBehaviour {
 	void Update ()
 	{
 		UpdateStrafe();
+		UpdateAttack();
 	}
 
 	// INPUTS //
@@ -33,6 +34,11 @@ public class PlayerInput : MonoBehaviour {
 	void UpdateStrafe ()
 	{
 		controller.ReceiveStrafe(Input.GetButton("Strafe"));
+	}
+
+	void UpdateAttack ()
+	{
+		controller.ReceiveAttack(Input.GetButtonDown("Attack"), Input.GetButtonUp("Attack"));
 	}
 
 	void UpdateBlock ()
