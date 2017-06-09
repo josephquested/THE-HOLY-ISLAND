@@ -18,10 +18,25 @@ public class PlayerInput : MonoBehaviour {
 		UpdateMovement();
 	}
 
+	void Update ()
+	{
+		UpdateStrafe();
+	}
+
 	// INPUTS //
 
 	void UpdateMovement ()
 	{
 		controller.ReceiveMovement(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+	}
+
+	void UpdateStrafe ()
+	{
+		controller.ReceiveStrafe(Input.GetButton("Strafe"));
+	}
+
+	void UpdateBlock ()
+	{
+		// controller.ReceiveBlock(Input.GetButtonDown("Block"), Input.GetButtonUp("Block"));
 	}
 }

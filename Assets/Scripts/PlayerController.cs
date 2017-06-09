@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 	// SYSTEM //
 
+	Rigidbody2D rb;
 	Animator anim;
 
 	void Start ()
@@ -14,11 +15,25 @@ public class PlayerController : MonoBehaviour {
 		anim = GetComponent<Animator>();
 	}
 
+	void Update ()
+	{
+		UpdateSpeed();
+	}
+
+	// SPEED //
+
+	float speed;
+	public float baseSpeed;
+	public float strafeSpeedModifier;
+
+	void UpdateSpeed ()
+	{
+		float speedModifier = 0;
+		if (strafing) speedModifier += strafeSpeedModifier;
+		speed = baseSpeed + speedModifier;
+	}
+
 	// MOVEMENT //
-
-	Rigidbody2D rb;
-
-	public float speed;
 
 	public void ReceiveMovement (float horizontal, float vertical)
 	{
@@ -53,12 +68,21 @@ public class PlayerController : MonoBehaviour {
 		else
 		{
 			anim.SetBool("Moving", true);
-			anim.SetInteger("Direction", direction);
+			if (!strafing) anim.SetInteger("Direction", direction);
 		}
 	}
 
 	void Move (Vector2 force)
 	{
 		rb.AddForce(force * speed, ForceMode2D.Impulse);
+	}
+
+	// STRAFE //
+
+	bool strafing;
+
+	public void ReceiveStrafe (bool strafe)
+	{
+		strafing = strafe;
 	}
 }
